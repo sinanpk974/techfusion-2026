@@ -32,7 +32,11 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;          
+  padding: 0;         
+  align-items: center;
 }
+
 
 .navbar a {
   color: #ffffff;
@@ -45,20 +49,43 @@ body {
 }
 
 .hero {
-  background:
-    linear-gradient(
-      rgba(44, 50, 61, 0.88),
-      rgba(43, 78, 160, 0.88)
-    ),
-    url("images/hero.jpg");
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+}
+.carousel,
+.carousel-inner,
+.carousel-item,
+.bg-slide {
+min-height: 89vh;
+}
 
+.bg-slide {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
 
-  color: #ffffff;
-  text-align: center;
-  padding: 120px 20px;
+/* Overlay stays */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(31, 36, 44, 0.88),
+    rgba(43, 78, 160, 0.88)
+  );
+  z-index: -1;
+}
+
+.carousel-item:nth-child(2) img,
+.carousel-item:nth-child(3) img {
+  opacity: 0.2;
 }
 
 
@@ -76,12 +103,12 @@ body {
 .hero .date {
   font-size: 16px;
   margin-top: 8px;
-  
+  margin-bottom: 40px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 0px;
   background-color: #292b32;
   color: #ffffff;
   padding: 12px 30px;
@@ -162,6 +189,7 @@ h3{
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   text-align: center;
+  align-items: center;
 }
 
 .card:hover {
@@ -179,6 +207,7 @@ h3{
 .card h4 {
   margin-bottom: 6px;
   color: #1e3a8a;
+  font-size: 17px;
 }
 .non-technical{
     padding-top: 40px;
@@ -187,7 +216,7 @@ h3{
 .timeline {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
   margin-top: 30px;
 }
@@ -213,7 +242,7 @@ h3{
 }
 
 .organizer-card:hover {
-  transform: translateX(-6px);
+  transform: translateX(6px);
 }
 
 .organizer-card img {
@@ -241,7 +270,11 @@ h3{
 .register p {
   margin-bottom: 20px;
 }
-
+.select{
+  width: 16%;
+  height: 30px;
+  color: rgb(118, 118, 118);
+}
 
 footer {
   background-color: #292b32;
