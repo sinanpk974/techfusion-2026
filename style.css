@@ -56,14 +56,16 @@ body {
   align-items: center;
   text-align: center;
   color: #ffffff;
-  z-index: 2;
+  z-index: 3; 
 }
+
 .carousel,
 .carousel-inner,
 .carousel-item,
 .bg-slide {
-min-height: 89vh;
+  min-height: 89dvh;
 }
+
 
 .bg-slide {
   background-size: cover;
@@ -72,7 +74,7 @@ min-height: 89vh;
 }
 
 /* Overlay stays */
-.hero::before {
+#bgCarousel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -80,8 +82,12 @@ min-height: 89vh;
     rgba(31, 36, 44, 0.88),
     rgba(43, 78, 160, 0.88)
   );
-  z-index: -1;
+  z-index: 2;
 }
+#bgCarousel {
+  position: relative;
+}
+
 
 .carousel-item:nth-child(2) img,
 .carousel-item:nth-child(3) img {
